@@ -1,8 +1,6 @@
 # LocalMovies
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/local_movies`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the local_movies GEM created as a portfolio project for Flatiron School. The purpose of this GEM is to take in a user's zipcode, and then display local movies playing in theatres in their area. 
 
 ## Installation
 
