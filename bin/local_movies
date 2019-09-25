@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby 
+require_relative "../lib/local_movies.rb"
+
+LocalMovies::CLI.new.call
