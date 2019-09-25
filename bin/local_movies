@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
 
 require './lib/local_movies'
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
+
+require_relative "./local_movies/version"
+require_relative "./local_movies/scraper
+require_relative "./local_movies/cli"
 
 LocalMovies::CLI.new.call
