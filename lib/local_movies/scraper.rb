@@ -1,6 +1,5 @@
 class Scraper
-
-    #require 'pry'
+    require 'pry'
 
     attr_accessor :zip_code, :url, :doc
 
@@ -8,16 +7,12 @@ class Scraper
         @zip_code = zip_code
         @url = "https://www.fandango.com/#{zip_code}_movietimes?q=#{zip_code}"
         @doc = scrape_fandango
-        #binding.pry
+        binding.pry
     end
 
     
     def scrape_fandango
         Nokogiri::HTML(open(@url))
     end
-
-
-    
-
 
 end
