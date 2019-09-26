@@ -1,15 +1,13 @@
 class Movie
-    attr_accessor :title, :rating, :run_time, :description, :show_times, :tickets_available
+    attr_accessor :title, :run_time, :show_times, :theater
 
     @@all = []
 
-    def initialize(title, rating, run_time, description, show_times, tickest_available)
+    def initialize(title, run_time, show_times, theater)
         @title = title 
-        @rating = rating 
         @run_time = run_time
-        @description = description 
         @show_times = show_times 
-        @tickets_available = tickets_available
+        @theater = theater
         @@all << self
     end
 
