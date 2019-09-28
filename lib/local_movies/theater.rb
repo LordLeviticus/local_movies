@@ -26,8 +26,12 @@ class Theater
     end
 
     def self.print_all
+        theater_counter = @@all.size
         @@all.each do |theater|
             counter = 1
+            puts "\nYou have #{theater_counter} theaters left to view..."
+            sleep(0.5)
+            theater_counter -= 1
             puts "\nPress Enter to Continue..."
             gets
             sleep(2)
@@ -37,7 +41,7 @@ class Theater
             puts theater.address
             puts ""
             sleep(1)
-            puts "THEATER LISTINGS"
+            puts "MOVIES PLAYING TODAY"
             sleep(1)
             puts ""
             theater.movies.each do |movie|

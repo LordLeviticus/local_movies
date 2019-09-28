@@ -6,14 +6,7 @@ class CLI
         description
         sleep (2)
         instructions
-        scrape_site
-        Theater.print_all
-        thank_you
-    end
-
-    def thank_you
-        sleep(2)
-        puts "\nThank you for using Local Movie Listings! Have a great day!"
+        program_input
     end
 
     def welcome_message
@@ -37,28 +30,38 @@ class CLI
     end
 
     def instructions
-        print "\nTo begin enter your five digit zipcode"
-        print "."
-        sleep(0.25)
-        print "."
-        sleep(0.25)
-        puts "."
-        sleep(0.5)
+        puts "\nEnter a five digit zipcode."
         puts "Or type exit to turn me off."
         print "=> "
     end
 
-    def scrape_site
-        zip_code = gets
-        sleep(0.5)
-        print "Calculating"
-        sleep(0.25)
-        print "."
-        sleep(0.25)
-        print "."
-        sleep(0.25)
-        print "."
-        scraper = Scraper.new(zip_code.chomp)
+    def program_input
+        user_input = gets.chomp
+        
+        case user_input
+        when /\A[Ee][Xx][Ii][Tt]\z/
+            puts "Enjoy your Movie!"
+        when /\A\d{5}\z/
+            sleep(0.5)
+            print "Calculating"
+            sleep(0.25)
+            print "."
+            sleep(0.25)
+            print "."
+            sleep(0.25)
+            print "."
+            puts ""
+            zip_code = user_input
+            scraper = Scraper.new(zip_code)
+            Theater.print_all
+            instructions
+            program_input
+        else
+            puts "Something went wrong. Please re-enter your selection => "
+            sleep(0.5)
+            instructions
+            program_input
+        end
     end
 
 end
