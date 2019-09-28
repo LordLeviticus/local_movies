@@ -1,7 +1,5 @@
 class CLI 
 
-
-
     def run 
         welcome_message
         sleep(1)
@@ -20,15 +18,34 @@ class CLI
 
     def welcome_message
         puts "\n"
-        puts "Welcome to Local Movie Listings!"
+        print "Welcome to MovieBot"
+        sleep(0.25)
+        print "."
+        sleep(0.25)
+        print "."
+        sleep(0.25)
+        print "."
+        sleep(0.25)
+        print "."
+        sleep(0.25)
+        puts "."
     end
 
     def description
-        puts "Your #1 place to get all of your local movie listings!"
+        puts "Your automated personal assistant for checking out all of you local theater and movie listings."
+
     end
 
     def instructions
-        print "\nPlease enter your zip code to see your local listings: "
+        print "\nTo begin enter your five digit zipcode"
+        print "."
+        sleep(0.25)
+        print "."
+        sleep(0.25)
+        puts "."
+        sleep(0.5)
+        puts "Or type exit to turn me off."
+        print "=> "
     end
 
     def scrape_site
