@@ -7,7 +7,7 @@ class Scraper
     def initialize(zip_code)
         @zip_code = zip_code
         @url = "https://www.imdb.com/showtimes/US/#{@zip_code}"
-        @doc = scrape_fandango
+        @doc = scrape_imdb
         build_theaters
     end
 
@@ -27,7 +27,7 @@ class Scraper
         end
     end
 
-    def scrape_fandango
+    def scrape_imdb
         Nokogiri::HTML(open(@url))
     end
 
