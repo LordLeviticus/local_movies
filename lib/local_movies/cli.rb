@@ -57,7 +57,7 @@ class CLI
             instructions
             program_input
         else
-            puts "Something went wrong. Please re-enter your selection => "
+            puts "Something went wrong!"
             sleep(0.5)
             instructions
             program_input
