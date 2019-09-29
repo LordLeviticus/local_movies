@@ -4,7 +4,7 @@ class CLI
         welcome_message
         sleep(1)
         description
-        sleep (2)
+        sleep(2)
         instructions
         program_input
     end
