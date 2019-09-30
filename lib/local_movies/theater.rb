@@ -26,35 +26,60 @@ class Theater
     end
 
     def self.print_all
-        theater_counter = @@all.size
+        puts "You have #{@@all.size} local theaters..."
+        puts ""
+        theater_counter = 1
         @@all.each do |theater|
-            counter = 1
-            puts "\nYou have #{theater_counter} theaters left to view..."
+            puts "#{theater_counter}. #{theater.name}"
+            puts "#{theater.address}"
+            theater_counter += 1
             sleep(0.5)
-            theater_counter -= 1
-            puts "\nPress Enter to Continue..."
-            gets
-            sleep(2)
             puts ""
-            puts ""
-            puts theater.name
-            puts theater.address
-            puts ""
-            sleep(1)
-            puts "MOVIES PLAYING TODAY"
-            sleep(1)
-            puts ""
-            theater.movies.each do |movie|
-                puts "#{counter}. #{movie.title}"
+        end
+        print "Please pick a theater from the list above: "
+        user_input = gets.chomp.to_i
+        puts "Here are the movies playing at your theater selection...\n\n"
+        counter = 1
+        @@all[user_input - 1].movies.each do |movie|
+            puts "#{counter}. #{movie.title}"
                 puts "Run Time: #{movie.run_time}"
                 puts "Show Times: #{movie.show_times}"
                 puts ""
                 counter += 1
                 sleep(0.5)
-                #binding.pry
-            end
-            puts "<------------------------->"
         end
+
+
+
+        # theater_counter = @@all.size
+        # @@all.each do |theater|
+        #     counter = 1
+        #     puts "\nYou have #{theater_counter} theaters left to view..."
+        #     sleep(0.5)
+        #     theater_counter -= 1
+        #     puts "\nPress Enter to Continue..."
+        #     gets
+        #     sleep(2)
+        #     puts ""
+        #     puts ""
+        #     puts theater.name
+        #     puts theater.address
+        #     puts ""
+        #     sleep(1)
+        #     puts "MOVIES PLAYING TODAY"
+        #     sleep(1)
+        #     puts ""
+        #     theater.movies.each do |movie|
+        #         puts "#{counter}. #{movie.title}"
+        #         puts "Run Time: #{movie.run_time}"
+        #         puts "Show Times: #{movie.show_times}"
+        #         puts ""
+        #         counter += 1
+        #         sleep(0.5)
+        #         #binding.pry
+        #     end
+        #     puts "<------------------------->"
+        #end
     end
 
 
