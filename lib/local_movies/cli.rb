@@ -55,6 +55,7 @@ class CLI
             scraper = Scraper.new(zip_code)
             Theater.print_all
             instructions
+            Theater.all.clear
             program_input
         else
             puts "Something went wrong!"
